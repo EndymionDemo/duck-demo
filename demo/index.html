@@ -24,13 +24,13 @@
         cursor: pointer;
         width: 600px;
         height: 200px;
-        margin-top:700px;
+        margin-top:500px;
     }
     .nuvoletta-container{
-        width: 400px;
+        width: 300px;
         position: absolute;
-        left: 10px;
-        top: 30px;
+        left: -25px;
+        top: 700px;
 
     }
     .nuvoletta-container .nuvoletta{
@@ -52,7 +52,9 @@
         window.onload = function(){
             var nuvoletta = document.getElementById("nuvoletta-container");
             nuvoletta.style.display = "none";
-            endymion.loadAsset("assets/DUCK.glb").render();
+            endymion.loadAsset("assets/DUCK.glb")
+                                .setPosition(0,-0.1,0.3)
+                                .setScale(0.4).render();
         }
 
         function sayHello(){
