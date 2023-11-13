@@ -8,8 +8,6 @@ AR experience using Endymion Library to say hello to a duck!
 ## Features
 
 - Render 3D assets with a simple javascript code
-- Using more than one location for experience
-- Interact with HTML element to collect 3D assets
 
 
 ## Getting Started
