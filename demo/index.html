@@ -14,6 +14,7 @@
         position: relative;
     }
     .container .say-hello{
+        position:absolute;
         font-size: 48px;
         text-transform: uppercase;
         background-color: #4472C4;
@@ -24,13 +25,14 @@
         cursor: pointer;
         width: 600px;
         height: 200px;
-        margin-top:500px;
+        bottom: 0;
+        /* margin-top:500px; */
     }
     .nuvoletta-container{
         width: 300px;
         position: absolute;
         left: -25px;
-        top: 700px;
+        top: 150px;
 
     }
     .nuvoletta-container .nuvoletta{
@@ -42,10 +44,10 @@
 </head>
 <body>
     <div class="container">
-        <button class="say-hello" onclick="sayHello()">say hello!</button>
         <div id="nuvoletta-container" class="nuvoletta-container">
-          <img class="nuvoletta" src="assets/Hello.png" />
-        </div>
+            <img class="nuvoletta" src="assets/Hello.png" />
+          </div>
+        <button class="say-hello" onclick="sayHello()">say hello!</button>
     </div>
 
     <script>
@@ -53,8 +55,8 @@
             var nuvoletta = document.getElementById("nuvoletta-container");
             nuvoletta.style.display = "none";
             endymion.loadAsset("assets/DUCK.glb")
-                                .setPosition(0,-0.1,0.3)
-                                .setScale(0.4).render();
+                                .setPosition(0, -0.2, 0)
+                                .setScale(0.3).render();
         }
 
         function sayHello(){
