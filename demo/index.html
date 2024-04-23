@@ -1,74 +1,79 @@
 <!doctype html>
 <html>
+
 <head>
-  <title>Duck Demo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="endymion.js"></script>
-  <style>
-    .container{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width:100%;
-        height: 100vh;
-        position: relative;
-    }
-    .container .say-hello{
-        position:absolute;
-        font-size: 48px;
-        text-transform: uppercase;
-        background-color: #4472C4;
-        color: white;
-        padding: 8px 25px;
-        border: 2px solid #B4C7E7;
-        box-shadow: 0px 0px 4px black;
-        cursor: pointer;
-        width: 600px;
-        height: 200px;
-        bottom: 0;
-        /* margin-top:500px; */
-    }
-    .nuvoletta-container{
-        width: 300px;
-        position: absolute;
-        left: -25px;
-        top: 150px;
+    <title>Duck Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="endymion.2.4.3.js"></script>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
 
-    }
-    .nuvoletta-container .nuvoletta{
-        width:100%;
-        height: auto;
-    }
+        .container .say-hello {
+            position: absolute;
+            font-size: 48px;
+            text-transform: uppercase;
+            background-color: #4472C4;
+            color: white;
+            padding: 8px 25px;
+            border: 2px solid #B4C7E7;
+            box-shadow: 0px 0px 4px black;
+            cursor: pointer;
+            width: 600px;
+            height: 200px;
+            bottom: 0;
+            /* margin-top:500px; */
+        }
 
-  </style>
+        .nuvoletta-container {
+            width: 300px;
+            position: absolute;
+            left: -25px;
+            top: 150px;
+
+        }
+
+        .nuvoletta-container .nuvoletta {
+            width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
+
 <body>
     <div class="container">
         <div id="nuvoletta-container" class="nuvoletta-container">
             <img class="nuvoletta" src="assets/Hello.png" />
-          </div>
+        </div>
         <button class="say-hello" onclick="sayHello()">say hello!</button>
     </div>
 
     <script>
-        window.onload = function(){
-            var nuvoletta = document.getElementById("nuvoletta-container");
-            nuvoletta.style.display = "none";
-            endymion.loadAsset("assets/DUCK.glb")
-                                .setPosition(0, -0.2, 0)
-                                .setScale(0.3).render();
-        }
+        var nuvoletta = document.getElementById("nuvoletta-container");
+        nuvoletta.style.display = "none";
+        let duck = en.asset();
+        duck.setPos(0, -0.2, 0)
+        .setScale(0.3)
+        .load("assets/DUCK.glb");
+            
 
-        function sayHello(){
+        function sayHello() {
             var nuvoletta = document.getElementById("nuvoletta-container");
             var visible = nuvoletta.style.display;
-            if(visible == 'block'){
+            if (visible == 'block') {
                 nuvoletta.style.display = "none";
-            }else{
+            } else {
                 nuvoletta.style.display = "block";
             }
         }
     </script>
 
 </body>
+
 </html>

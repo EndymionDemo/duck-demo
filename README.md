@@ -120,18 +120,20 @@ Lets explore index.html
     </div>
 
     <script>
-        window.onload = function(){
-            var nuvoletta = document.getElementById("nuvoletta-container");
-            nuvoletta.style.display = "none";
-            endymion.loadAsset("assets/DUCK.glb").render();
-        }
+        var nuvoletta = document.getElementById("nuvoletta-container");
+        nuvoletta.style.display = "none";
+        let duck = en.asset();
+        duck.setPos(0, -0.2, 0)
+        .setScale(0.3)
+        .load("assets/DUCK.glb");
+            
 
-        function sayHello(){
+        function sayHello() {
             var nuvoletta = document.getElementById("nuvoletta-container");
             var visible = nuvoletta.style.display;
-            if(visible == 'block'){
+            if (visible == 'block') {
                 nuvoletta.style.display = "none";
-            }else{
+            } else {
                 nuvoletta.style.display = "block";
             }
         }
